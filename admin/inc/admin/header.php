@@ -43,6 +43,9 @@ if( empty($_SESSION['email']) && empty($_SESSION['user_id']) )
    <!-- Chartlist chart css -->
    <link rel="stylesheet" href="assets/plugins/chartist/dist/chartist.css" type="text/css" media="all">
 
+   <!-- jquery data table -->
+   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.css">
+
    <!-- Weather css -->
    <link href="assets/css/svg-weather.css" rel="stylesheet">
 

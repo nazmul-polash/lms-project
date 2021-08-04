@@ -29,7 +29,7 @@ include("inc/admin/manubar.php");
 							</div>
 						</div>
 						<div class="card-block">
-							<table class="table table-striped">
+							<table class="table table-striped display" id="table_id">
 								<thead>
 									<tr>
 										<th scope="col">Serial</th>

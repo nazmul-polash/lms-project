@@ -13,6 +13,9 @@
    <!--classic JS-->
    <script src="assets/plugins/classie/classie.js"></script>
 
+   <!-- jquery data table -->
+   <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.js"></script>
+
    <!-- notification -->
    <script src="assets/plugins/notification/js/bootstrap-growl.min.js"></script>
 
@@ -35,6 +38,15 @@
    <script type="text/javascript" src="assets/pages/dashboard.js"></script>
    <script type="text/javascript" src="assets/pages/elements.js"></script>
    <script src="assets/js/menu.min.js"></script>
+
+
+   <!-- jquery data table initialising code -->
+   <script>
+     $(document).ready( function () {
+          $('#table_id').DataTable();
+      } );
+   </script>
+   
 <script>
 var $window = $(window);
 var nav = $('.fixed-button');

@@ -33,7 +33,7 @@ include("inc/admin/manubar.php");
                            echo $count;
                         ?>
                      </h2>
-                     
+                     <a href="book.php" class="label label-success">View Details</a>
                      <div class="side-box">
                         <i class="icon-book-open text-warning-color"></i>
                      </div>
@@ -41,9 +41,17 @@ include("inc/admin/manubar.php");
                </div>
                <div class="col-lg-3 col-md-6">
                   <div class="card dashboard-product">
-                     <span>Products</span>
-                     <h2 class="dashboard-total-products">37,500</h2>
-                     <span class="label label-primary">Views</span>View Today
+                     <h5>Total Order Books</h5>
+                     <h2 class="dashboard-total-products">
+                        <?php
+                           $query = "SELECT * FROM booking ORDER BY id DESC";
+                           $data = mysqli_query($connect, $query);
+                           $count = mysqli_num_rows($data);
+                           echo $count;
+                        ?>
+                     </h2>
+                     <a href="booking_books.php" class="label label-danger">View Details</a>
+                     
                      <div class="side-box ">
                         <i class="ti-gift text-primary-color"></i>
                      </div>

@@ -46,9 +46,24 @@ include "inc/header.php";
                                             <?php }
                                         ?>
                                     </div>
+
+                                    <?php
+                                    if( !empty($_SESSION['email']) )
+                                    {?>
+
                                     <div class="mt-3">
-                                        <a href="" data-toggle="modal" data-target="#exampleModal" class="btn btn-primary btn-block">Order Now...</a>
+                                        <a href="ordernow.php?orderbook=<?php echo $bookname;?>" class="btn btn-primary btn-block">Order Now...</a>
                                     </div>
+                                    <?php }
+
+                                    else
+                                    { ?>
+                                        <div class="mt-3">
+                                            <h4>Collect This Book, Please First   "<a href=""data-toggle="modal" data-target="#exampleModal">Log In </a>"</h4>
+                                        </div>
+                                    <?php }
+                                    ?>
+
                                 </div>
 
                                 <div class="col-md-8">
@@ -63,7 +78,18 @@ include "inc/header.php";
                                         </div>
                                         
                                         <div class="col-md-7">
-                                            <div class="m-3"><p>Category Name</p></div>
+                                            <div class="m-3"><p>
+                                                <?php
+                                                $query = "SELECT * FROM category WHERE cat_id = '$bookcat'";
+                                                $category_name = mysqli_query($connect, $query);
+                                                while( $row = mysqli_fetch_array($category_name) )
+                                                {
+                                                    $cat_id     = $row['cat_id'];
+                                                    $cat_name   = $row['cat_name'];
+                                                    echo $cat_name;
+                                                }
+                                                ?>
+                                            </p></div>
                                             <div class="m-3"><p>
                                                 <?php
                                                     $query = "SELECT * FROM user WHERE user_id = '$author'";

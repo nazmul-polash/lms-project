@@ -76,7 +76,11 @@ include "admin/inc/db.php";
                         	<?php }
                         	?>
 
-                             <li class="nav-item dropdown">
+                            <?php
+                            if( !empty($_SESSION['email']) )
+                            {?>
+
+                            <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <span>
                                         <?php
@@ -103,10 +107,19 @@ include "admin/inc/db.php";
                                     <?php echo $_SESSION['fullname']; ?>
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="profile.php">Profile</a>
+                                    <a class="dropdown-item" href="profile.php?do=profile">Profile</a>
                                     <a class="dropdown-item" href="logout.php">Log Out</a>
                                 </div>
-                              </li>
+                            </li>
+
+                            <?php }
+                            else
+                            { ?>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="" data-toggle="modal" data-target="#exampleModal">Log In</a>
+                                </li>
+                            <?php }
+                            ?>
                             
                         </ul>
                         <!--  login Modal start -->
@@ -114,7 +127,7 @@ include "admin/inc/db.php";
                           <div class="modal-dialog modal-dialog-centered">
                             <div class="modal-content">
                               <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">LOGIN Your Account</h5>
+                                <h5 class="modal-title" id="exampleModalLabel">LogIn Your Account</h5>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                   <span aria-hidden="true">&times;</span>
                                 </button>
@@ -156,9 +169,10 @@ include "admin/inc/db.php";
                                 </form>
                               </div>
                               <div class="modal-footer">
-                                <form>
-                                    
-                                </form>
+                                <div class="col-12 text-center">
+                                    <span class="text-muted">Don't have an account?</span>
+                                    <a href="registration.php">Registration Now</a>
+                                </div>  
                               </div>
                             </div>
                           </div>
